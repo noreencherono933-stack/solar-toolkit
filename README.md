@@ -1,84 +1,190 @@
-SolarPulse Toolkit
-Description
-The SolarPulse Toolkit is a specialized web interface designed for real-time monitoring and visualization of photovoltaic (PV) system performance. Built as an engineering-first dashboard, it translates raw energy data (like kW output and battery state-of-charge) into intuitive visual analytics. This project demonstrates the integration of renewable energy concepts with modern full-stack development.
+<div align="center">
 
-Key Features
-Real-time Performance Metrics: Instant visualization of Current Power Output (kW), Storage Levels (%), and System Efficiency.
+```
+███████╗ ██████╗ ██╗      █████╗ ██████╗ ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+██╔════╝██╔═══██╗██║     ██╔══██╗██╔══██╗██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+███████╗██║   ██║██║     ███████║██████╔╝██████╔╝██║   ██║██║     ███████╗█████╗  
+╚════██║██║   ██║██║     ██╔══██║██╔══██╗██╔═══╝ ██║   ██║██║     ╚════██║██╔══╝  
+███████║╚██████╔╝███████╗██║  ██║██║  ██║██║     ╚██████╔╝███████╗███████║███████╗
+╚══════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚══════╝╚══════╝╚══════╝
+```
 
-Dynamic Yield Analytics: An interactive Area Chart tracking the 24-hour diurnal solar cycle to identify peak generation hours.
+### ☀️ Real-Time Photovoltaic Monitoring Dashboard
 
-System Status Heartbeat: A visual diagnostic indicator to confirm active connectivity between hardware logic and the UI.
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Recharts](https://img.shields.io/badge/Recharts-FF6B6B?style=for-the-badge&logo=chart.js&logoColor=white)](https://recharts.org/)
+[![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://netlify.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge)](./LICENSE)
 
-Responsive UI: A mobile-first design optimized for on-site field inspections and remote monitoring.
+*Translating raw PV energy data into intuitive visual analytics — built for engineers, designed for clarity.*
 
-Technologies Used
-Frontend: React.js (Vite)
+</div>
 
-Styling: Tailwind CSS (Utility-first framework)
+---
 
-Visualization: Recharts (SVG-based charting library)
+## 📋 Table of Contents
 
-Icons: Lucide-React
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+- [Usage](#-usage)
+- [Configuration](#-configuration)
+- [Project Structure](#-project-structure)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-Deployment: Netlify
+---
 
-Installation Requirements
-Node.js: v18.0.0 or higher
+## 🔍 Overview
 
-NPM: v9.0.0 or higher
+**SolarPulse Toolkit** is an engineering-first web dashboard for real-time monitoring and visualization of photovoltaic (PV) system performance. It converts raw solar energy data — power output in kW, battery state-of-charge, system efficiency — into clear, actionable visual analytics.
 
-Editor: VS Code (recommended)
+> Built to demonstrate the integration of renewable energy domain knowledge with modern full-stack web development.
 
-Installation Instructions
-Clone the Repository:
+---
 
-Bash
+## ✨ Key Features
+
+| Feature | Description |
+|---|---|
+| ⚡ **Real-Time Metrics** | Live visualization of Power Output (kW), Storage Levels (%), and System Efficiency |
+| 📈 **Yield Analytics** | Interactive area chart tracking the 24-hour diurnal solar cycle to identify peak generation windows |
+| 💓 **System Heartbeat** | Visual diagnostic indicator confirming active hardware-to-UI connectivity |
+| 📱 **Responsive UI** | Mobile-first design optimized for on-site field inspections and remote monitoring |
+
+---
+
+## 🛠 Tech Stack
+
+```
+Frontend    →  React.js (Vite)
+Styling     →  Tailwind CSS  
+Charts      →  Recharts (SVG-based)
+Icons       →  Lucide React
+Deployment  →  Netlify
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** `v18.0.0` or higher
+- **NPM** `v9.0.0` or higher
+- **VS Code** *(recommended)*
+
+### Installation
+
+**1. Clone the repository**
+```bash
 git clone https://github.com/noreencherono933-stack/solar-toolkit.git
-Install Dependencies:
+cd solar-toolkit
+```
 
-Bash
+**2. Install dependencies**
+```bash
 npm install
-Start Development Server:
+```
 
-Bash
+**3. Start the development server**
+```bash
 npm run dev
-Basic Usage Example
-The dashboard is designed for zero-configuration. Upon launch, the Dashboard component initializes the Recharts engine to render the current day's energy profile.
+```
 
-JavaScript
-// Example of the StatCard component used for PV metrics
+The dashboard will be live at `http://localhost:5173` 🎉
+
+---
+
+## 💡 Usage
+
+The dashboard is designed for **zero configuration**. On launch, the `Dashboard` component automatically initializes the Recharts engine and renders the current day's energy profile.
+
+```jsx
+// Reusable StatCard component for PV metrics
 <StatCard 
   title="Current Output" 
   value="5.8 kW" 
   Icon={Zap} 
 />
-Configuration Options
-Theme: The UI uses an "Amber/Slate" theme tailored for solar branding. Colors can be adjusted in tailwind.config.js.
+```
 
-Data Source: Currently utilizes a mock data array in App.jsx. This can be replaced with a fetch() call to a live IoT API.
+---
 
-Troubleshooting
-Script Execution Error: If npm scripts fail on Windows, ensure you are using Command Prompt (cmd) instead of PowerShell, or update your system's Execution_Policy.
+## ⚙️ Configuration
 
-Styles not loading: The project uses a CDN-injected Tailwind link in index.html to ensure styling reliability in restricted environments.
+**Theme**  
+The UI uses an **Amber/Slate** color scheme tailored for solar branding. Colors are easily adjustable in `tailwind.config.js`.
 
-Code Structure Overview
-Plaintext
+**Data Source**  
+The project currently uses a mock data array in `App.jsx`. To connect live data, replace it with a `fetch()` call to your IoT API endpoint:
+
+```js
+// Replace mock data with a live API call
+const data = await fetch("https://your-iot-api.com/metrics").then(r => r.json());
+```
+
+---
+
+## 📁 Project Structure
+
+```
 solar-toolkit/
 ├── src/
-│   ├── App.jsx        # Main Dashboard logic and UI components
-│   ├── index.css      # Tailwind directives and global styles
-│   └── main.jsx       # React entry point
-├── public/            # Static assets
-├── index.html         # HTML template with Tailwind CDN
-├── tailwind.config.js # Styling configuration
-└── package.json       # Project dependencies and scripts
+│   ├── App.jsx          # Main dashboard logic & UI components
+│   ├── index.css        # Tailwind directives & global styles
+│   └── main.jsx         # React entry point
+├── public/              # Static assets
+├── index.html           # HTML template with Tailwind CDN
+├── tailwind.config.js   # Styling configuration
+└── package.json         # Dependencies & scripts
+```
 
-Contributing Guidelines
-1.Fork the repository.
-2.Create a feature branch (git checkout -b feature/NewSolarMetric).
-3.Commit your changes.
-4.Push to the branch and open a Pull Request.
+---
 
-License Information
-Distributed under the MIT License. See LICENSE for more information.
+## 🔧 Troubleshooting
+
+**`npm` script execution error on Windows**  
+> PowerShell may block script execution due to system policy restrictions.  
+> ✅ **Fix:** Use **Command Prompt (`cmd`)** instead, or adjust your `Execution_Policy` setting.
+
+**Tailwind styles not loading**  
+> This can occur in restricted environments where PostCSS isn't processing correctly.  
+> ✅ **Fix:** A CDN-injected Tailwind link is included in `index.html` as a reliable fallback.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To get started:
+
+1. **Fork** the repository
+2. **Create** a feature branch
+   ```bash
+   git checkout -b feature/NewSolarMetric
+   ```
+3. **Commit** your changes
+   ```bash
+   git commit -m "feat: add NewSolarMetric component"
+   ```
+4. **Push** to your branch and open a **Pull Request**
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for full details.
+
+---
+
+<div align="center">
+
+Made with ☀️ and React &nbsp;·&nbsp; <a href="https://github.com/noreencherono933-stack/solar-toolkit">github.com/noreencherono933-stack/solar-toolkit</a>
+
+</div>
